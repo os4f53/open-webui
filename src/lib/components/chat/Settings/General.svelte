@@ -15,7 +15,7 @@
 	export let getModels: Function;
 
 	// General
-	let themes = ['dark', 'dark-mild', 'light', 'rose-pine dark', 'rose-pine-dawn light', 'oled-dark'];
+	let themes = ['dark', 'light', 'rose-pine dark', 'rose-pine-dawn light', 'oled-dark'];
 	let selectedTheme = 'system';
 
 	let languages: Awaited<ReturnType<typeof getLanguages>> = [];
@@ -175,13 +175,6 @@
 			document.documentElement.style.setProperty('--color-gray-950', '#0d0d0d');
 		}
 
-		if (themeToApply === 'dark-mild') {
-			document.documentElement.style.setProperty('--color-gray-800', '#4d4d4d'); // 15% lighter
-			document.documentElement.style.setProperty('--color-gray-850', '#3a3a3a'); // 15% lighter
-			document.documentElement.style.setProperty('--color-gray-900', '#292929'); // 15% lighter
-			document.documentElement.style.setProperty('--color-gray-950', '#1a1a1a'); // 15% lighter
-		}
-
 		themes
 			.filter((e) => e !== themeToApply)
 			.forEach((e) => {
@@ -209,9 +202,9 @@
 					_theme === 'dark'
 						? '#171717'
 						: _theme === 'oled-dark'
-							? '#000000'
-							: _theme === 'dark-mild'
-								? '#292929'
+							? '#252525'
+							: _theme === 'her'
+								? '#983724'
 								: '#ffffff'
 				);
 			}
@@ -222,10 +215,10 @@
 		}
 
 		if (_theme.includes('oled')) {
-			document.documentElement.style.setProperty('--color-gray-800', '#101010');
-			document.documentElement.style.setProperty('--color-gray-850', '#050505');
-			document.documentElement.style.setProperty('--color-gray-900', '#000000');
-			document.documentElement.style.setProperty('--color-gray-950', '#000000');
+			document.documentElement.style.setProperty('--color-gray-800', '#4e4e4e');
+			document.documentElement.style.setProperty('--color-gray-850', '#0b2952');
+			document.documentElement.style.setProperty('--color-gray-900', '#1e1e1e');
+			document.documentElement.style.setProperty('--color-gray-950', '#252525');
 			document.documentElement.classList.add('dark');
 		}
 
