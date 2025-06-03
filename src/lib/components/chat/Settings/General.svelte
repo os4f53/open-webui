@@ -15,7 +15,7 @@
 	export let getModels: Function;
 
 	// General
-	let themes = ['dark', 'light', 'rose-pine dark', 'rose-pine-dawn light', 'oled-dark'];
+	let themes = ['dark', 'dark-mild', 'light', 'rose-pine dark', 'rose-pine-dawn light', 'oled-dark'];
 	let selectedTheme = 'system';
 
 	let languages: Awaited<ReturnType<typeof getLanguages>> = [];
@@ -175,6 +175,13 @@
 			document.documentElement.style.setProperty('--color-gray-950', '#0d0d0d');
 		}
 
+		if (themeToApply === 'dark-mild') {
+			document.documentElement.style.setProperty('--color-gray-800', '#4d4d4d'); // 15% lighter
+			document.documentElement.style.setProperty('--color-gray-850', '#3a3a3a'); // 15% lighter
+			document.documentElement.style.setProperty('--color-gray-900', '#292929'); // 15% lighter
+			document.documentElement.style.setProperty('--color-gray-950', '#1a1a1a'); // 15% lighter
+		}
+
 		themes
 			.filter((e) => e !== themeToApply)
 			.forEach((e) => {
@@ -203,8 +210,8 @@
 						? '#171717'
 						: _theme === 'oled-dark'
 							? '#000000'
-							: _theme === 'her'
-								? '#983724'
+							: _theme === 'dark-mild'
+								? '#292929'
 								: '#ffffff'
 				);
 			}
