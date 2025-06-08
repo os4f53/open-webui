@@ -169,10 +169,14 @@
 		}
 
 		if (themeToApply === 'dark' && !_theme.includes('oled')) {
-			document.documentElement.style.setProperty('--color-gray-800', '#333');
-			document.documentElement.style.setProperty('--color-gray-850', '#262626');
-			document.documentElement.style.setProperty('--color-gray-900', '#171717');
-			document.documentElement.style.setProperty('--color-gray-950', '#0d0d0d');
+			// document.documentElement.style.setProperty('--color-gray-800', '#333');
+			// document.documentElement.style.setProperty('--color-gray-850', '#262626');
+			// document.documentElement.style.setProperty('--color-gray-900', '#171717');
+			// document.documentElement.style.setProperty('--color-gray-950', '#0d0d0d');
+			document.documentElement.style.setProperty('--color-gray-800', '#4e4e4e');
+			document.documentElement.style.setProperty('--color-gray-850', '#0b2952');
+			document.documentElement.style.setProperty('--color-gray-900', '#1e1e1e');
+			document.documentElement.style.setProperty('--color-gray-950', '#252525');
 		}
 
 		themes
@@ -200,12 +204,12 @@
 				metaThemeColor.setAttribute(
 					'content',
 					_theme === 'dark'
-						? '#171717'
+						? '#252525'
 						: _theme === 'oled-dark'
 							? '#252525'
 							: _theme === 'her'
 								? '#983724'
-								: '#ffffff'
+								: '#252525'
 				);
 			}
 		}
