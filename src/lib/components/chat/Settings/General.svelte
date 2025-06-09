@@ -16,7 +16,7 @@
 
 	// General
 	let themes = ['dark', 'light', 'rose-pine dark', 'rose-pine-dawn light', 'oled-dark'];
-	let selectedTheme = 'system';
+	let selectedTheme = 'oled-dark';
 
 	let languages: Awaited<ReturnType<typeof getLanguages>> = [];
 	let lang = $i18n.language;
@@ -198,7 +198,7 @@
 					? 'dark'
 					: 'light';
 				console.log('Setting system meta theme color: ' + systemTheme);
-				metaThemeColor.setAttribute('content', systemTheme === 'light' ? '#ffffff' : '#171717');
+				metaThemeColor.setAttribute('content', systemTheme === 'light' ? '#252525' : '#353535');
 			} else {
 				console.log('Setting meta theme color: ' + _theme);
 				metaThemeColor.setAttribute(
